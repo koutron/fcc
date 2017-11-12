@@ -1,0 +1,23 @@
+{
+  "name": "fcc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2",
+    "ip": "^1.1.5",
+    "mongodb": "^2.2.33",
+    "mongoose": "^4.13.0",
+    "multer": "^1.3.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2",
+    "useragent": "^2.2.1",
+    "valid-url": "^1.0.9"
+  }
+}

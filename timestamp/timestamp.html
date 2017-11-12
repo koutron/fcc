@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
+  crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+
+  </head>
+  <body>
+    <header>
+      <h1>
+        freecodecamp.com Timestamp Microservice Project
+      </h1>
+      <h3>
+        This service uses node.js and Express to extract URL date information and return it in both natural date and UNIX time formats.<br><br>
+        Example input (Seperated with spaces): <span id="date"></span><br><br>
+          <script>
+        $( document ).ready(function() {
+         let today = new Date();
+          today = today.toString().slice(4, 15);
+         $('#date').append(today);
+        });
+         </script>
+        Example input: https://timestampservice.glitch.me/1502136043
+      </h3>
+    </header>
+
+    <main>
+
+
+    <!-- Your web-app is https, so your scripts need to be too -->
+
+    </main>
+  </body>
+</html>

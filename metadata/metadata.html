@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>File Metadata Microservice</title>
+</head>
+<body>
+    <h1>
+      File Metadata Microservice
+  </h1>
+  <p>
+    The service returns information on the uploaded file.  The Multer npm module is used to add uploading ability to the server.
+    The following user stories are satisfied for this project: <br><br>
+    -I can submit a FormData object that includes a file upload. <br>
+    -When I submit something, I will receive the file size in bytes within the JSON response.
+  </p>
+    <form action="/metadata/getfile" method="post" enctype="multipart/form-data">
+        <input type="file" name="fileupload">
+        <input type="submit">
+    </form>
+</body>
+</html>
