@@ -17,9 +17,9 @@ router.get('/', function (request, response) {
   response.sendFile(__dirname + '/abstraction.html');
 });
 
-mongoose.connect('mongodb://koutron:poopoo12@ds129281.mlab.com:29281/koutron');
+//mongoose.connect('mongodb://koutron:poopoo12@ds129281.mlab.com:29281/koutron');
 var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+//db.on('error', console.error.bind(console, 'connection error:'));
 
 db.once('open', function() {  //connect to db
   var querySchema = new mongoose.Schema({query : String, date: { type: Date, default: Date.now }});  //setup schema / model

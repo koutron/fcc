@@ -8,7 +8,6 @@ var path = require('path');
 var app = express();
 
 app.get('/', function (request, response) {
-  console.log('fuck' + request.path);
   response.sendFile(__dirname + '/index.html');
 });
 
