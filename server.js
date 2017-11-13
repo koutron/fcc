@@ -5,18 +5,18 @@ var headerparser = require('./headerparser/server.js');
 var abstraction = require('./abstraction/server.js');
 var express = require('express');
 var path = require('path');
-var app = express();
+var router = express.Router();
 
-app.get('/', function (request, response) {
+router.get('/', function (request, response) {
   response.sendFile(__dirname + '/index.html');
 });
 
-app.use('/timestamp', timestamp);
-app.use('/metadata', metadata);
-app.use('/bitlink', bitlink);
-app.use('/headerparser', headerparser);
-app.use('/abstraction', abstraction);
+router.use('/timestamp', timestamp);
+router.use('/metadata', metadata);
+router.use('/bitlink', bitlink);
+router.use('/headerparser', headerparser);
+router.use('/abstraction', abstraction);
 
 //app.use('/', express.static(path.join(__dirname + "public")));
 
-app.listen(9001);
+module.exports = router;
