@@ -4,8 +4,9 @@ var router = express.Router();
 var mongoose = require('mongoose');
 var validUrl = require('valid-url');
 var path = require('path');
+var keys = require('../keys.js');
 
-mongoose.connect('mongodb://koutron:poopoo12@ds129281.mlab.com:29281/koutron');
+mongoose.connect(keys.mongodbKey);
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {

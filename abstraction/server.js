@@ -7,6 +7,7 @@ var request = require('request');
 var rp = require('request-promise');
 var express = require('express');
 var path = require('path');
+var keys = require('../keys.js')
 var router = express.Router();
 
 
@@ -17,9 +18,9 @@ router.get('/', function (request, response) {
   response.sendFile(__dirname + '/abstraction.html');
 });
 
-//mongoose.connect('mongodb://koutron:poopoo12@ds129281.mlab.com:29281/koutron');
+
 var db = mongoose.connection;
-//db.on('error', console.error.bind(console, 'connection error:'));
+
 
 db.once('open', function() {  //connect to db
   var querySchema = new mongoose.Schema({query : String, date: { type: Date, default: Date.now }});  //setup schema / model
@@ -45,7 +46,7 @@ var saveQuery = new queryModel({query : req.params.query});
 saveQuery.save();
 }
 var options = {uri: 'https://api.imgur.com/3/gallery/search/top/all/' + (offset ? offset : 1) + '/?q=' + req.params.query,
-headers:{'Authorization':'Client-ID e80864a75efd3c6'}, json: true};
+headers:{'Authorization':keys.imgurKey}, json: true};
 var images = rp(options)
 .then(function (repos) {
       return repos;
