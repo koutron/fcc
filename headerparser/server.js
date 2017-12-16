@@ -4,7 +4,7 @@ var ip = require('ip');
 var path = require('path');
 var router = express.Router();
 
-router.get('/info', function(req, res){
+router.get('./info', function(req, res){
 var agent = useragent.parse(req.headers['user-agent']);
   res.send(agent.toString() + '<br>' + ip.address());
 });
