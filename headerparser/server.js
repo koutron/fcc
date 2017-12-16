@@ -10,7 +10,7 @@ router.get('/', function (request, response) {
   response.sendFile(__dirname + '/headerparser.html');
 });
 
-router.get('/info', function(req, res){
+router.get('/fcc/headerparser/info', function(req, res){
 var agent = useragent.parse(req.headers['user-agent']);
   res.send(agent.toString() + '<br>' + ip.address());
 });
